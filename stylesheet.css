@@ -40,7 +40,7 @@ a:hover {
 	display: table;
 }
 
-#menuitem{
+.menuitem{
 	font-size:20pt;
 	text-align: center;
 	padding-left:40px;
@@ -82,7 +82,7 @@ a:hover {
 	padding:10px;
 }
 
-#paper{
+.paper{
 	padding:10px;
 }
 
@@ -98,4 +98,19 @@ a:hover {
 #like a{
 	text-decoration: none;
 	color: #941322;
+}
+
+@media (max-width: 600px) {
+	#name{
+		font-size: 250%;
+	}
+
+	.menuitem{
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+
+	#sections{
+		width: 90%;
+	}
 }
