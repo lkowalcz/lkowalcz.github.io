@@ -61,10 +61,16 @@ a:hover {
 
 .collapsible > .collapsible-inner{
 	overflow: hidden;
+	transition: padding 0.4s ease;
 }
 
 .collapsible.collapsed{
 	grid-template-rows: 0fr;
+}
+
+.collapsible.collapsed > .collapsible-inner{
+	padding-top: 0;
+	padding-bottom: 0;
 }
 
 #menu{
@@ -91,7 +97,7 @@ a:hover {
 	margin: 0px auto;
 }
 
-#abt{
+#abt:not(.collapsed) > .collapsible-inner{
 	padding:10px;
 }
 
@@ -102,6 +108,9 @@ a:hover {
 
 #cnt{
 	text-align:center;
+}
+
+#cnt:not(.collapsed) > .collapsible-inner{
 	padding:10px;
 }
 
@@ -110,7 +119,7 @@ a:hover {
 	color: #941322;
 }
 
-#pub{
+#pub:not(.collapsed) > .collapsible-inner{
 	padding:10px;
 }
 
