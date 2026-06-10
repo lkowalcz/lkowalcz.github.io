@@ -15,7 +15,7 @@ Personal website of Luke (Lucas) Kowalczyk. Plain static HTML — no build step,
 - `stylesheet.css` — all styling, including the `.collapsible` animation, link-styled `<button>`s (`.linklike`), and a ≤600px media query for phones.
 - `favicon.svg` — "LK" monogram favicon.
 - `luke_columbia_pgp.asc` — PGP public key, linked from the Contact section.
-- Email addresses in `index.html` are assembled by inline JavaScript (simple scraper obfuscation) with `<noscript>` fallbacks — keep that pattern if editing contact info.
+- Email addresses in `index.html` are plain `mailto:` links in the Contact section.
 
 ## Verifying a deploy
 
