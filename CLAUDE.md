@@ -14,8 +14,7 @@ Personal website of Luke (Lucas) Kowalczyk. Plain static HTML — no build step,
 - `index.html` — the entire site: one page with About / Research / Contact sections, toggled by a small vanilla-JS script at the end of `<body>` (no dependencies). Sections and photos are `.collapsible` divs; toggling adds/removes the `.collapsed` class, and a CSS `grid-template-rows` transition animates the slide. Clicking the photo swaps between two pictures (`images/me.jpg`, `images/pic2.jpg`).
 - `stylesheet.css` — all styling, including the `.collapsible` animation, link-styled `<button>`s (`.linklike`), and a ≤600px media query for phones.
 - `favicon.svg` — "LK" monogram favicon.
-- `luke_columbia_pgp.asc` — PGP public key, linked from the Contact section.
-- Email addresses in `index.html` are plain `mailto:` links in the Contact section.
+- Email addresses in `index.html` are plain `mailto:` links in the Contact section. There is deliberately no PGP key on the site — for encrypted contact, Luke prefers people email first and then move to Signal.
 
 ## Verifying a deploy
 
