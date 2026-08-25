@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1"/>
-	<meta name="description" content="Luke Kowalczyk is the Head of Quantitative Research at IEX, a US stock exchange."/>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Luke Kowalczyk is the Head of Quantitative Research at IEX, a US stock exchange.">
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="https://lukekowalczyk.com/">
 	<meta property="og:title" content="Luke Kowalczyk">
@@ -12,168 +11,153 @@
 	<meta property="og:image" content="https://lukekowalczyk.com/images/me.jpg">
 	<meta name="twitter:card" content="summary">
 	<title>Luke Kowalczyk</title>
-	<link href="stylesheet.css" rel="stylesheet" type="text/css">
+	<link rel="preload" href="fonts/open-sans-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="stylesheet" href="stylesheet.css">
 	<link rel="icon" href="favicon.svg" type="image/svg+xml">
 	<noscript><style>.collapsible.collapsed{grid-template-rows:1fr;}</style></noscript>
-
 </head>
 <body>
 
 <div id="top">
-		<div id="pic" class="collapsible">
+	<div id="pic" class="collapsible">
 		<div class="collapsible-inner">
-		<button class="picbutton" data-pic><img src="images/me.jpg" alt="Luke Kowalczyk"/></button>
+			<button class="picbutton" data-pic><img src="images/me.jpg" alt="Luke Kowalczyk"></button>
 		</div>
-		</div>
-		<div id="pic2" class="collapsible collapsed">
+	</div>
+	<div id="pic2" class="collapsible collapsed">
 		<div class="collapsible-inner">
-		<button class="picbutton" data-pic><img src="images/pic2.jpg" alt="Young Luke Kowalczyk"/></button>
+			<button class="picbutton" data-pic><img src="images/pic2.jpg" alt="Young Luke Kowalczyk" loading="lazy"></button>
 		</div>
-		</div>
-		<div id="name">
+	</div>
+	<div id="name">
 		Luke Kowalczyk
-		</div>
+	</div>
 </div>
-<div id="bottom">
 
+<div id="bottom">
 	<aside id="content">
-	<div id="menu">
-	<div class="menuitem">
-	<button class="linklike" data-section="abt">About</button>
-	</div>
-	<div class="menuitem">
-	<button class="linklike" data-section="pub">Publications</button>
-	</div>
-	<div class="menuitem">
-	<button class="linklike" data-section="cnt">Contact</button>
-	</div>
-	</div>
+		<div id="menu">
+			<div class="menuitem">
+				<button class="linklike" data-section="abt">About</button>
+			</div>
+			<div class="menuitem">
+				<button class="linklike" data-section="pub">Publications</button>
+			</div>
+			<div class="menuitem">
+				<button class="linklike" data-section="cnt">Contact</button>
+			</div>
+		</div>
 	</aside>
 
 	<div id="sections">
 
-	<div id="abt" class="collapsible collapsed">
-	<div class="collapsible-inner">
-	<p>I'm currently the Head of Quantitative Research at <a href="https://www.iextrading.com/">IEX</a>, where we work on developing innovative exchange products for US equities and options trading.</p>
-	<p>Before IEX, I did cryptography research at Columbia University. My PhD advisors were <a href="https://www.cs.columbia.edu/~allison">Allison Bishop</a> and <a href="https://www.cs.columbia.edu/~tal">Tal Malkin</a>, and I was a member of the <a href="https://www.cs.columbia.edu/crypto">Crypto Lab</a> at the Columbia Computer Science Department. Check out my crypto publications here: <button class="linklike" data-section="pub">[Publications]</button></p>
-	<p>I am a captain emeritus of the <a href="https://www.instagram.com/columbiaskiteam">Columbia Ski Team</a>. I love skiing.</p>
-	</div>
-	</div>
+		<div id="abt" class="collapsible collapsed">
+			<div class="collapsible-inner">
+				<p>I'm currently the Head of Quantitative Research at <a href="https://www.iextrading.com/">IEX</a>, where we work on developing innovative exchange products for US equities and options trading.</p>
+				<p>Before IEX, I did cryptography research at Columbia University. My PhD advisors were <a href="https://www.cs.columbia.edu/~allison">Allison Bishop</a> and <a href="https://www.cs.columbia.edu/~tal">Tal Malkin</a>, and I was a member of the <a href="https://www.cs.columbia.edu/crypto">Crypto Lab</a> at the Columbia Computer Science Department. Check out my crypto publications here: <button class="linklike" data-section="pub">[Publications]</button></p>
+				<p>I am a captain emeritus of the <a href="https://www.instagram.com/columbiaskiteam">Columbia Ski Team</a>. I love skiing.</p>
+			</div>
+		</div>
 
-	<div id="cnt" class="collapsible collapsed">
-	<div class="collapsible-inner">
-		IEX Email:<br/>
-		<a href="mailto:luke.kowalczyk@iextrading.com">luke.kowalczyk@iextrading.com</a>
+		<div id="cnt" class="collapsible collapsed">
+			<div class="collapsible-inner">
+				IEX Email:<br>
+				<a href="mailto:luke.kowalczyk@iextrading.com">luke.kowalczyk@iextrading.com</a>
 
-		<br/><br/>
-		Columbia Email:<br/>
-		<a href="mailto:luke@cs.columbia.edu">luke@cs.columbia.edu</a>
+				<br><br>
+				Columbia Email:<br>
+				<a href="mailto:luke@cs.columbia.edu">luke@cs.columbia.edu</a>
+			</div>
+		</div>
 
-	</div>
-	</div>
+		<div id="pub" class="collapsible collapsed">
+			<div class="collapsible-inner">
 
-	<div id="pub" class="collapsible collapsed">
-	<div class="collapsible-inner">
+				<hr>
 
+				<div class="paper">
+					<a href="https://eprint.iacr.org/2019/224.pdf">"Compact Adaptively Secure ABE for NC1 from k-Lin"</a> (EUROCRYPT 2019)<br>
+					<strong>Runner-up: Best Paper Award!</strong> (full version in Journal of Cryptology)<br>
+					with Hoeteck Wee<br>
+				</div>
 
-	<hr>
+				<div class="paper">
+					<a href="https://eprint.iacr.org/2018/645.pdf">"Mitigating the One-Use Restriction in Attribute-Based Encryption"</a> (ICISC 2018)<br>
+					with Jiahui Liu, Tal Malkin, and Kailash Meiyappan<br>
+				</div>
 
-	<div class="paper">
-		<a href="https://eprint.iacr.org/2019/224.pdf">"Compact Adaptively Secure ABE for NC1 from k-Lin"</a> (EUROCRYPT 2019)<br/>
-		<strong>Runner-up: Best Paper Award!</strong> (full version in Journal of Cryptology)<br/>
-		with Hoeteck Wee<br/>
-	</div>
+				<div class="paper">
+					<a href="https://eprint.iacr.org/2018/391.pdf">"Tight Adaptively Secure Broadcast Encryption with Short Ciphertexts and Keys"</a> (SCN 2018)<br>
+					with Romain Gay and Hoeteck Wee<br>
+				</div>
 
-	<div class="paper">
-		<a href="https://eprint.iacr.org/2018/645.pdf">"Mitigating the One-Use Restriction in Attribute-Based Encryption"</a> (ICISC 2018)<br/>
-		with Jiahui Liu, Tal Malkin, and Kailash Meiyappan<br/>
-	</div>
+				<div class="paper">
+					<a href="https://eprint.iacr.org/2018/210.pdf">"A Simple Obfuscation Scheme for Pattern-Matching with Wildcards"</a> (CRYPTO 2018)<br>
+					with Allison Bishop, Tal Malkin, Valerio Pastro, Mariana Raykova, and Kevin Shi<br>
+				</div>
 
-	<div class="paper">
-		<a href="https://eprint.iacr.org/2018/391.pdf">"Tight Adaptively Secure Broadcast Encryption with Short Ciphertexts and Keys"</a> (SCN 2018)<br/>
-		with Romain Gay and Hoeteck Wee<br/>
-	</div>
+				<div class="paper">
+					<a href="https://eprint.iacr.org/2017/1107.pdf">"Hardness of Non-Interactive Differential Privacy from One-Way Functions"</a> (CRYPTO 2018)<br>
+					with Tal Malkin, Jonathan Ullman, and Daniel Wichs<br>
+				</div>
 
-	<div class="paper">
-		<a href="https://eprint.iacr.org/2018/210.pdf">"A Simple Obfuscation Scheme for Pattern-Matching with Wildcards"</a> (CRYPTO 2018)<br/>
-		with Allison Bishop, Tal Malkin, Valerio Pastro, Mariana Raykova, and Kevin Shi<br/>
-	</div>
+				<div class="paper">
+					<a href="https://eprint.iacr.org/2018/116.pdf">"Unbounded ABE via Bilinear Entropy Expansion, Revisited"</a> (EUROCRYPT 2018)<br>
+					with Jie Chen, Junqing Gong, and Hoeteck Wee<br>
+				</div>
 
-	<div class="paper">
-		<a href="https://eprint.iacr.org/2017/1107.pdf">"Hardness of Non-Interactive Differential Privacy from One-Way Functions"</a> (CRYPTO 2018)<br/>
-		with Tal Malkin, Jonathan Ullman, and Daniel Wichs<br/>
-	</div>
+				<div class="paper">
+					<a href="https://eprint.iacr.org/2017/009.pdf">"Access Control Encryption for Equality, Comparison, and More"</a> (PKC 2017)<br>
+					with Georg Fuchsbauer, Romain Gay, and Claudio Orlandi<br>
+				</div>
 
-	<div class="paper">
-		<a href="https://eprint.iacr.org/2018/116.pdf">"Unbounded ABE via Bilinear Entropy Expansion, Revisited"</a> (EUROCRYPT 2018)<br/>
-		with Jie Chen, Junqing Gong, and Hoeteck Wee<br/>
-	</div>
+				<div class="paper">
+					<a href="https://eprint.iacr.org/2016/721.pdf">"Strong Hardness of Privacy from Weak Traitor Tracing"</a> (TCC 2016-B)<br>
+					with Tal Malkin, Jonathan Ullman, and Mark Zhandry<br>
+				</div>
 
-	<div class="paper">
-		<a href="https://eprint.iacr.org/2017/009.pdf">"Access Control Encryption for Equality, Comparison, and More"</a> (PKC 2017)<br/>
-		with Georg Fuchsbauer, Romain Gay, and Claudio Orlandi<br/>
-	</div>
+				<div class="paper">
+					<a href="https://eprint.iacr.org/2015/672.pdf">"Function-Hiding Inner Product Encryption"</a> (ASIACRYPT 2015)<br>
+					with Allison Bishop and Abhishek Jain<br>
+				</div>
 
-	<div class="paper">
-		<a href="https://eprint.iacr.org/2016/721.pdf">"Strong Hardness of Privacy from Weak Traitor Tracing"</a> (TCC 2016-B)<br/>
-		with Tal Malkin, Jonathan Ullman, and Mark Zhandry<br/>
-	</div>
+				<div class="paper">
+					<a href="https://eprint.iacr.org/2014/754.pdf">"Bilinear Entropy Expansion from the Decisional Linear Assumption"</a> (CRYPTO 2015)<br>
+					with Allison Bishop<br>
+				</div>
 
-	<div class="paper">
-		<a href="https://eprint.iacr.org/2015/672.pdf">"Function-Hiding Inner Product Encryption"</a> (ASIACRYPT 2015)<br/>
-		with Allison Bishop and Abhishek Jain<br/>
-	</div>
-
-	<div class="paper">
-		<a href="https://eprint.iacr.org/2014/754.pdf">"Bilinear Entropy Expansion from the Decisional Linear Assumption"</a> (CRYPTO 2015)<br/>
-		with Allison Bishop<br/>
-	</div>
-
-	</div>
-	</div>
+			</div>
+		</div>
 
 	</div>
 </div>
 
 <script>
-	var sections = ['abt', 'cnt', 'pub'];
-	var currentPic = 'pic';
+	const sections = ['abt', 'cnt', 'pub'];
+	let currentPic = 'pic';
 
-	function setCollapsed(id, collapsed)
-	{
+	function setCollapsed(id, collapsed) {
 		document.getElementById(id).classList.toggle('collapsed', collapsed);
 	}
 
-	function sectionClicked(id)
-	{
-		var wasOpen = !document.getElementById(id).classList.contains('collapsed');
+	function sectionClicked(id) {
+		const wasOpen = !document.getElementById(id).classList.contains('collapsed');
 
-		sections.forEach(function(s){ setCollapsed(s, true); });
-		setCollapsed('pic', true);
-		setCollapsed('pic2', true);
-
-		if(wasOpen)
-		{
-			setCollapsed(currentPic, false);
-		}
-		else
-		{
-			setCollapsed(id, false);
-		}
+		[...sections, 'pic', 'pic2'].forEach((s) => setCollapsed(s, true));
+		setCollapsed(wasOpen ? currentPic : id, false);
 	}
 
-	function picClicked()
-	{
+	function picClicked() {
 		setCollapsed(currentPic, true);
-		currentPic = (currentPic === 'pic') ? 'pic2' : 'pic';
+		currentPic = currentPic === 'pic' ? 'pic2' : 'pic';
 		setCollapsed(currentPic, false);
 	}
 
-	document.querySelectorAll('button[data-section]').forEach(function(b){
-		b.addEventListener('click', function(){ sectionClicked(b.dataset.section); });
+	document.querySelectorAll('button[data-section]').forEach((button) => {
+		button.addEventListener('click', () => sectionClicked(button.dataset.section));
 	});
-	document.querySelectorAll('button[data-pic]').forEach(function(b){
-		b.addEventListener('click', picClicked);
+	document.querySelectorAll('button[data-pic]').forEach((button) => {
+		button.addEventListener('click', picClicked);
 	});
 </script>
 
