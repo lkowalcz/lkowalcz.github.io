@@ -101,6 +101,7 @@ a:hover {
 }
 
 #abt:not(.collapsed) > .collapsible-inner,
+#prj:not(.collapsed) > .collapsible-inner,
 #cnt:not(.collapsed) > .collapsible-inner,
 #pub:not(.collapsed) > .collapsible-inner {
 	padding: 10px;
@@ -184,7 +185,8 @@ a:hover {
 	margin-top: 4px;
 }
 
-.paper {
+.paper,
+.project {
 	padding: 10px;
 }
 
