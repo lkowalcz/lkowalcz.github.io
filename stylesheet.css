@@ -110,6 +110,80 @@ a:hover {
 	text-align: center;
 }
 
+#iexchart {
+	margin: 20px 0 10px;
+}
+
+#iexchart-wrap {
+	position: relative;
+}
+
+#iexchart-svg {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+#iexchart-svg .grid line {
+	stroke: #e4e6e8;
+	stroke-width: 1;
+}
+
+#iexchart-svg .lbl text {
+	font-size: 11px;
+	fill: #767b80;
+}
+
+#iexchart-svg .area {
+	fill: rgba(42, 45, 48, 0.08);
+}
+
+#iexchart-svg .line {
+	fill: none;
+	stroke: #2A2D30;
+	stroke-width: 2;
+	stroke-linejoin: round;
+}
+
+#iexchart-svg .dot {
+	fill: #2A2D30;
+}
+
+#iexchart-svg .endlbl {
+	font-size: 11px;
+	fill: #2A2D30;
+}
+
+#iexchart-svg .hover line {
+	stroke: #941322;
+	stroke-width: 1;
+}
+
+#iexchart-svg .hover circle {
+	fill: #941322;
+	stroke: #fff;
+	stroke-width: 2;
+}
+
+#iexchart-tip {
+	position: absolute;
+	top: 0;
+	transform: translateX(-50%);
+	background: #2A2D30;
+	color: #fff;
+	font-size: 12px;
+	padding: 3px 8px;
+	border-radius: 4px;
+	white-space: nowrap;
+	pointer-events: none;
+}
+
+#iexchart figcaption {
+	font-size: 12px;
+	color: #767b80;
+	margin-top: 4px;
+}
+
 .paper {
 	padding: 10px;
 }

@@ -1,0 +1,24 @@
+name: Update IEX volume data
+
+on:
+  schedule:
+    - cron: '17 11 3 * *' # monthly, on the 3rd, once the prior month's stats are up
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/update-iex-volume.py
+      - name: Commit if changed
+        run: |
+          if ! git diff --quiet data/iex-volume.json; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add data/iex-volume.json
+            git commit -m "Update IEX volume data"
+            git push
+          fi

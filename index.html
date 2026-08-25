@@ -54,6 +54,13 @@
 		<div id="abt" class="collapsible collapsed">
 			<div class="collapsible-inner">
 				<p>I'm currently the Head of Quantitative Research at <a href="https://www.iextrading.com/">IEX</a>, where we work on developing innovative exchange products for US equities and options trading.</p>
+				<figure id="iexchart" hidden>
+					<div id="iexchart-wrap">
+						<svg id="iexchart-svg" viewBox="0 0 640 250" role="img" aria-label="Line chart of IEX average daily matched volume by month, from about 9 million shares in January 2014 to hundreds of millions today."></svg>
+						<div id="iexchart-tip" hidden></div>
+					</div>
+					<figcaption>IEX average daily matched volume, by month &mdash; data from <a href="https://iextrading.com/stats/">iextrading.com/stats</a></figcaption>
+				</figure>
 				<p>Before IEX, I did cryptography research at Columbia University. My PhD advisors were <a href="https://www.cs.columbia.edu/~allison">Allison Bishop</a> and <a href="https://www.cs.columbia.edu/~tal">Tal Malkin</a>, and I was a member of the <a href="https://www.cs.columbia.edu/crypto">Crypto Lab</a> at the Columbia Computer Science Department. Check out my crypto publications here: <button class="linklike" data-section="pub">[Publications]</button></p>
 				<p>I am a captain emeritus of the <a href="https://www.instagram.com/columbiaskiteam">Columbia Ski Team</a>. I love skiing.</p>
 			</div>
@@ -159,6 +166,83 @@
 	document.querySelectorAll('button[data-pic]').forEach((button) => {
 		button.addEventListener('click', picClicked);
 	});
+
+	async function drawIexChart() {
+		let data;
+		try {
+			data = await (await fetch('data/iex-volume.json')).json();
+		} catch {
+			return; // no data, no chart
+		}
+		const adv = data.adv;
+		const n = adv.length;
+		const startYear = Number(data.start.split('-')[0]);
+		const W = 640, H = 250, L = 46, R = 52, T = 12, B = 26;
+		const pw = W - L - R, ph = H - T - B;
+
+		const max = Math.max(...adv);
+		const rawStep = max / 4;
+		const pow = 10 ** Math.floor(Math.log10(rawStep));
+		const step = [1, 2, 2.5, 5, 10].map((m) => m * pow).find((s) => s >= rawStep);
+		const ymax = Math.ceil(max / step) * step;
+
+		const x = (i) => L + (i / (n - 1)) * pw;
+		const y = (v) => T + ph - (v / ymax) * ph;
+		const fmt = (v) => v >= 1e9
+			? (v / 1e9).toFixed(2).replace(/\.?0+$/, '') + 'B'
+			: Math.round(v / 1e6) + 'M';
+		const monthName = (i) => new Date(Date.UTC(startYear, i))
+			.toLocaleString('en-US', { month: 'short', year: 'numeric', timeZone: 'UTC' });
+
+		let grid = '', labels = '';
+		for (let v = 0; v <= ymax; v += step) {
+			grid += `<line x1="${L}" x2="${L + pw}" y1="${y(v)}" y2="${y(v)}"/>`;
+			if (v > 0) labels += `<text x="${L - 8}" y="${y(v) + 4}" text-anchor="end">${fmt(v)}</text>`;
+		}
+		for (let i = 0; i < n; i += 24) {
+			labels += `<text x="${x(i)}" y="${H - 8}" text-anchor="middle">${startYear + i / 12}</text>`;
+		}
+
+		const pts = adv.map((v, i) => `${x(i).toFixed(1)},${y(v).toFixed(1)}`);
+		const line = 'M' + pts.join('L');
+		const area = `${line}L${x(n - 1)},${y(0)}L${x(0)},${y(0)}Z`;
+
+		const svg = document.getElementById('iexchart-svg');
+		svg.innerHTML =
+			`<g class="grid">${grid}</g>` +
+			`<g class="lbl">${labels}</g>` +
+			`<path class="area" d="${area}"/>` +
+			`<path class="line" d="${line}"/>` +
+			`<circle class="dot" cx="${x(n - 1)}" cy="${y(adv[n - 1])}" r="3"/>` +
+			`<text class="endlbl" x="${x(n - 1) + 7}" y="${y(adv[n - 1]) + 4}">${fmt(adv[n - 1])}</text>` +
+			`<g class="hover" style="display:none"><line y1="${T}" y2="${T + ph}"/><circle r="3.5"/></g>`;
+
+		const tip = document.getElementById('iexchart-tip');
+		const hover = svg.querySelector('.hover');
+		const hoverLine = hover.querySelector('line');
+		const hoverDot = hover.querySelector('circle');
+		svg.addEventListener('pointermove', (e) => {
+			const rect = svg.getBoundingClientRect();
+			const mx = ((e.clientX - rect.left) / rect.width) * W;
+			const i = Math.max(0, Math.min(n - 1, Math.round(((mx - L) / pw) * (n - 1))));
+			hover.style.display = '';
+			hoverLine.setAttribute('x1', x(i));
+			hoverLine.setAttribute('x2', x(i));
+			hoverDot.setAttribute('cx', x(i));
+			hoverDot.setAttribute('cy', y(adv[i]));
+			tip.hidden = false;
+			tip.textContent = `${monthName(i)}: ${fmt(adv[i])} shares/day`;
+			const px = (x(i) / W) * rect.width;
+			tip.style.left = Math.min(Math.max(px, 70), rect.width - 70) + 'px';
+		});
+		svg.addEventListener('pointerleave', () => {
+			hover.style.display = 'none';
+			tip.hidden = true;
+		});
+
+		document.getElementById('iexchart').hidden = false;
+	}
+	drawIexChart();
 </script>
 
 </body>
