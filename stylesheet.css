@@ -190,6 +190,10 @@ a:hover {
 	padding: 10px;
 }
 
+.project + .project {
+	margin-top: 15px;
+}
+
 @media (max-width: 600px) {
 	#name {
 		font-size: 250%;
