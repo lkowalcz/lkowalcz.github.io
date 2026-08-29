@@ -53,14 +53,18 @@
 
 		<div id="abt" class="collapsible collapsed">
 			<div class="collapsible-inner">
-				<figure id="iexchart" hidden>
-					<div id="iexchart-wrap">
-						<svg id="iexchart-svg" viewBox="0 0 640 250" role="img" aria-label="Line chart of IEX average daily traded dollar value by month, from about 10 billion dollars in September 2020 to over 40 billion dollars today."></svg>
-						<div id="iexchart-tip" hidden></div>
+				<p>I'm currently the Head of Quantitative Research at <a href="https://www.iextrading.com/">IEX</a>, where we work on developing innovative exchange products for US equities and options trading. <span id="iexchart-link" hidden>See our equities exchange's growth here: <button class="linklike" data-toggle="iexchartbox">[IEX Avg Daily Volume]</button></span></p>
+				<div id="iexchartbox" class="collapsible collapsed">
+					<div class="collapsible-inner">
+						<figure id="iexchart" hidden>
+							<div id="iexchart-wrap">
+								<svg id="iexchart-svg" viewBox="0 0 640 250" role="img" aria-label="Line chart of IEX average daily traded dollar value by month, from about 10 billion dollars in September 2020 to over 40 billion dollars today."></svg>
+								<div id="iexchart-tip" hidden></div>
+							</div>
+							<figcaption>IEX average daily traded dollar value, by month &mdash; data from <a href="https://www.cboe.com/us/equities/market_share/">Cboe</a></figcaption>
+						</figure>
 					</div>
-					<figcaption>IEX average daily traded dollar value, by month &mdash; data from <a href="https://www.cboe.com/us/equities/market_share/">Cboe</a></figcaption>
-				</figure>
-				<p>I'm currently the Head of Quantitative Research at <a href="https://www.iextrading.com/">IEX</a>, where we work on developing innovative exchange products for US equities and options trading.</p>
+				</div>
 				<p>Before IEX, I did cryptography research at Columbia University. My PhD advisors were <a href="https://www.cs.columbia.edu/~allison">Allison Bishop</a> and <a href="https://www.cs.columbia.edu/~tal">Tal Malkin</a>, and I was a member of the <a href="https://www.cs.columbia.edu/crypto">Crypto Lab</a> at the Columbia Computer Science Department. Check out my crypto publications here: <button class="linklike" data-section="pub">[Publications]</button></p>
 				<p>I am a captain emeritus of the <a href="https://www.instagram.com/columbiaskiteam">Columbia Ski Team</a>. I love skiing.</p>
 			</div>
@@ -166,6 +170,12 @@
 	document.querySelectorAll('button[data-pic]').forEach((button) => {
 		button.addEventListener('click', picClicked);
 	});
+	document.querySelectorAll('button[data-toggle]').forEach((button) => {
+		button.addEventListener('click', () => {
+			const box = document.getElementById(button.dataset.toggle);
+			setCollapsed(button.dataset.toggle, !box.classList.contains('collapsed'));
+		});
+	});
 
 	async function drawIexChart() {
 		let data;
@@ -241,6 +251,7 @@
 		});
 
 		document.getElementById('iexchart').hidden = false;
+		document.getElementById('iexchart-link').hidden = false;
 	}
 	drawIexChart();
 </script>
