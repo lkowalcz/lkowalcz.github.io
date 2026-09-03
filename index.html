@@ -34,151 +34,138 @@
 	</h1>
 </div>
 
-<div id="bottom">
-	<nav id="content">
-		<div id="menu">
-			<div class="menuitem">
-				<button class="linklike" data-section="abt">About</button>
+<nav id="menu">
+	<button class="linklike" data-section="abt">About</button>
+	<button class="linklike" data-section="pub">Publications</button>
+	<button class="linklike" data-section="cnt">Contact</button>
+</nav>
+
+<div id="sections">
+
+	<div id="abt" class="collapsible collapsed">
+		<div class="collapsible-inner">
+			<p>I'm currently the Head of Quantitative Research at <a href="https://www.iextrading.com/">IEX</a>, where we work on improving execution quality in US equities and options markets through better exchange design. <span id="iexchart-link" hidden>See our equities exchange's growth here: <button class="linklike" data-toggle="iexchartbox">[IEX Avg Daily Volume]</button></span></p>
+			<div id="iexchartbox" class="collapsible collapsed">
+				<div class="collapsible-inner">
+					<figure id="iexchart" hidden>
+						<div id="iexchart-wrap">
+							<svg id="iexchart-svg" viewBox="0 0 640 250" role="img" aria-label="Line chart of IEX average daily traded dollar value by month since September 2020."></svg>
+							<div id="iexchart-tip" hidden></div>
+						</div>
+						<figcaption>IEX average daily traded dollar value, by month &mdash; data from <a href="https://www.cboe.com/us/equities/market_share/">Cboe</a></figcaption>
+					</figure>
+				</div>
 			</div>
-			<div class="menuitem">
-				<button class="linklike" data-section="pub">Publications</button>
-			</div>
-			<div class="menuitem">
-				<button class="linklike" data-section="cnt">Contact</button>
-			</div>
+			<p>Before IEX, I did cryptography research at Columbia University. My PhD advisors were <a href="https://www.cs.columbia.edu/~allison">Allison Bishop</a> and <a href="https://www.cs.columbia.edu/~tal">Tal Malkin</a>, and I was a member of the <a href="https://www.cs.columbia.edu/crypto">Crypto Lab</a> at the Columbia Computer Science Department. Check out my crypto publications here: <button class="linklike" data-section="pub">[Publications]</button></p>
+			<p>I am a captain emeritus of the <a href="https://www.instagram.com/columbiaskiteam">Columbia Ski Team</a>. I love skiing.</p>
 		</div>
-	</nav>
-
-	<div id="sections">
-
-		<div id="abt" class="collapsible collapsed">
-			<div class="collapsible-inner">
-				<p>I'm currently the Head of Quantitative Research at <a href="https://www.iextrading.com/">IEX</a>, where we work on improving execution quality in US equities and options markets through better exchange design. <span id="iexchart-link" hidden>See our equities exchange's growth here: <button class="linklike" data-toggle="iexchartbox">[IEX Avg Daily Volume]</button></span></p>
-				<div id="iexchartbox" class="collapsible collapsed">
-					<div class="collapsible-inner">
-						<figure id="iexchart" hidden>
-							<div id="iexchart-wrap">
-								<svg id="iexchart-svg" viewBox="0 0 640 250" role="img" aria-label="Line chart of IEX average daily traded dollar value by month since September 2020."></svg>
-								<div id="iexchart-tip" hidden></div>
-							</div>
-							<figcaption>IEX average daily traded dollar value, by month &mdash; data from <a href="https://www.cboe.com/us/equities/market_share/">Cboe</a></figcaption>
-						</figure>
-					</div>
-				</div>
-				<p>Before IEX, I did cryptography research at Columbia University. My PhD advisors were <a href="https://www.cs.columbia.edu/~allison">Allison Bishop</a> and <a href="https://www.cs.columbia.edu/~tal">Tal Malkin</a>, and I was a member of the <a href="https://www.cs.columbia.edu/crypto">Crypto Lab</a> at the Columbia Computer Science Department. Check out my crypto publications here: <button class="linklike" data-section="pub">[Publications]</button></p>
-				<p>I am a captain emeritus of the <a href="https://www.instagram.com/columbiaskiteam">Columbia Ski Team</a>. I love skiing.</p>
-			</div>
-		</div>
-
-		<div id="cnt" class="collapsible collapsed">
-			<div class="collapsible-inner">
-				IEX Email:<br>
-				<a href="mailto:luke.kowalczyk@iextrading.com">luke.kowalczyk@iextrading.com</a>
-
-				<br><br>
-				Columbia Email:<br>
-				<a href="mailto:luke@cs.columbia.edu">luke@cs.columbia.edu</a>
-			</div>
-		</div>
-
-		<div id="pub" class="collapsible collapsed">
-			<div class="collapsible-inner">
-
-				<hr>
-
-				<div class="paper">
-					<a href="https://eprint.iacr.org/2019/224.pdf">"Compact Adaptively Secure ABE for NC1 from k-Lin"</a> (EUROCRYPT 2019)<br>
-					<strong>Runner-up: Best Paper Award!</strong> (full version in Journal of Cryptology)<br>
-					with Hoeteck Wee<br>
-				</div>
-
-				<div class="paper">
-					<a href="https://eprint.iacr.org/2018/645.pdf">"Mitigating the One-Use Restriction in Attribute-Based Encryption"</a> (ICISC 2018)<br>
-					with Jiahui Liu, Tal Malkin, and Kailash Meiyappan<br>
-				</div>
-
-				<div class="paper">
-					<a href="https://eprint.iacr.org/2018/391.pdf">"Tight Adaptively Secure Broadcast Encryption with Short Ciphertexts and Keys"</a> (SCN 2018)<br>
-					with Romain Gay and Hoeteck Wee<br>
-				</div>
-
-				<div class="paper">
-					<a href="https://eprint.iacr.org/2018/210.pdf">"A Simple Obfuscation Scheme for Pattern-Matching with Wildcards"</a> (CRYPTO 2018)<br>
-					with Allison Bishop, Tal Malkin, Valerio Pastro, Mariana Raykova, and Kevin Shi<br>
-				</div>
-
-				<div class="paper">
-					<a href="https://eprint.iacr.org/2017/1107.pdf">"Hardness of Non-Interactive Differential Privacy from One-Way Functions"</a> (CRYPTO 2018)<br>
-					with Tal Malkin, Jonathan Ullman, and Daniel Wichs<br>
-				</div>
-
-				<div class="paper">
-					<a href="https://eprint.iacr.org/2018/116.pdf">"Unbounded ABE via Bilinear Entropy Expansion, Revisited"</a> (EUROCRYPT 2018)<br>
-					with Jie Chen, Junqing Gong, and Hoeteck Wee<br>
-				</div>
-
-				<div class="paper">
-					<a href="https://eprint.iacr.org/2017/009.pdf">"Access Control Encryption for Equality, Comparison, and More"</a> (PKC 2017)<br>
-					with Georg Fuchsbauer, Romain Gay, and Claudio Orlandi<br>
-				</div>
-
-				<div class="paper">
-					<a href="https://eprint.iacr.org/2016/721.pdf">"Strong Hardness of Privacy from Weak Traitor Tracing"</a> (TCC 2016-B)<br>
-					with Tal Malkin, Jonathan Ullman, and Mark Zhandry<br>
-				</div>
-
-				<div class="paper">
-					<a href="https://eprint.iacr.org/2015/672.pdf">"Function-Hiding Inner Product Encryption"</a> (ASIACRYPT 2015)<br>
-					with Allison Bishop and Abhishek Jain<br>
-				</div>
-
-				<div class="paper">
-					<a href="https://eprint.iacr.org/2014/754.pdf">"Bilinear Entropy Expansion from the Decisional Linear Assumption"</a> (CRYPTO 2015)<br>
-					with Allison Bishop<br>
-				</div>
-
-			</div>
-		</div>
-
 	</div>
+
+	<div id="pub" class="collapsible collapsed">
+		<div class="collapsible-inner">
+
+			<hr>
+
+			<div class="paper">
+				<a href="https://eprint.iacr.org/2019/224.pdf">"Compact Adaptively Secure ABE for NC1 from k-Lin"</a> (EUROCRYPT 2019)<br>
+				<strong>Runner-up: Best Paper Award!</strong> (full version in Journal of Cryptology)<br>
+				with Hoeteck Wee
+			</div>
+
+			<div class="paper">
+				<a href="https://eprint.iacr.org/2018/645.pdf">"Mitigating the One-Use Restriction in Attribute-Based Encryption"</a> (ICISC 2018)<br>
+				with Jiahui Liu, Tal Malkin, and Kailash Meiyappan
+			</div>
+
+			<div class="paper">
+				<a href="https://eprint.iacr.org/2018/391.pdf">"Tight Adaptively Secure Broadcast Encryption with Short Ciphertexts and Keys"</a> (SCN 2018)<br>
+				with Romain Gay and Hoeteck Wee
+			</div>
+
+			<div class="paper">
+				<a href="https://eprint.iacr.org/2018/210.pdf">"A Simple Obfuscation Scheme for Pattern-Matching with Wildcards"</a> (CRYPTO 2018)<br>
+				with Allison Bishop, Tal Malkin, Valerio Pastro, Mariana Raykova, and Kevin Shi
+			</div>
+
+			<div class="paper">
+				<a href="https://eprint.iacr.org/2017/1107.pdf">"Hardness of Non-Interactive Differential Privacy from One-Way Functions"</a> (CRYPTO 2018)<br>
+				with Tal Malkin, Jonathan Ullman, and Daniel Wichs
+			</div>
+
+			<div class="paper">
+				<a href="https://eprint.iacr.org/2018/116.pdf">"Unbounded ABE via Bilinear Entropy Expansion, Revisited"</a> (EUROCRYPT 2018)<br>
+				with Jie Chen, Junqing Gong, and Hoeteck Wee
+			</div>
+
+			<div class="paper">
+				<a href="https://eprint.iacr.org/2017/009.pdf">"Access Control Encryption for Equality, Comparison, and More"</a> (PKC 2017)<br>
+				with Georg Fuchsbauer, Romain Gay, and Claudio Orlandi
+			</div>
+
+			<div class="paper">
+				<a href="https://eprint.iacr.org/2016/721.pdf">"Strong Hardness of Privacy from Weak Traitor Tracing"</a> (TCC 2016-B)<br>
+				with Tal Malkin, Jonathan Ullman, and Mark Zhandry
+			</div>
+
+			<div class="paper">
+				<a href="https://eprint.iacr.org/2015/672.pdf">"Function-Hiding Inner Product Encryption"</a> (ASIACRYPT 2015)<br>
+				with Allison Bishop and Abhishek Jain
+			</div>
+
+			<div class="paper">
+				<a href="https://eprint.iacr.org/2014/754.pdf">"Bilinear Entropy Expansion from the Decisional Linear Assumption"</a> (CRYPTO 2015)<br>
+				with Allison Bishop
+			</div>
+
+		</div>
+	</div>
+
+	<div id="cnt" class="collapsible collapsed">
+		<div class="collapsible-inner">
+			IEX Email:<br>
+			<a href="mailto:luke.kowalczyk@iextrading.com">luke.kowalczyk@iextrading.com</a>
+
+			<br><br>
+			Columbia Email:<br>
+			<a href="mailto:luke@cs.columbia.edu">luke@cs.columbia.edu</a>
+		</div>
+	</div>
+
 </div>
 
 <script>
-	const sections = ['abt', 'cnt', 'pub'];
+	// Exactly one top-level panel is open at a time: a section, or else the current photo.
+	const panels = document.querySelectorAll('#top > .collapsible, #sections > .collapsible');
 	let currentPic = 'pic';
 
-	function setCollapsed(id, collapsed) {
-		const el = document.getElementById(id);
+	function setCollapsed(el, collapsed) {
 		el.classList.toggle('collapsed', collapsed);
 		el.inert = collapsed; // keep hidden links out of the tab order and accessibility tree
 	}
 
-	function sectionClicked(id) {
-		const wasOpen = !document.getElementById(id).classList.contains('collapsed');
-
-		[...sections, 'pic', 'pic2'].forEach((s) => setCollapsed(s, true));
-		setCollapsed(wasOpen ? currentPic : id, false);
-	}
-
-	function picClicked() {
-		setCollapsed(currentPic, true);
-		currentPic = currentPic === 'pic' ? 'pic2' : 'pic';
-		setCollapsed(currentPic, false);
+	function show(id) {
+		panels.forEach((panel) => setCollapsed(panel, panel.id !== id));
 	}
 
 	document.querySelectorAll('button[data-section]').forEach((button) => {
-		button.addEventListener('click', () => sectionClicked(button.dataset.section));
+		button.addEventListener('click', () => {
+			const section = document.getElementById(button.dataset.section);
+			show(section.classList.contains('collapsed') ? section.id : currentPic);
+		});
 	});
 	document.querySelectorAll('button[data-pic]').forEach((button) => {
-		button.addEventListener('click', picClicked);
+		button.addEventListener('click', () => {
+			currentPic = currentPic === 'pic' ? 'pic2' : 'pic';
+			show(currentPic);
+		});
 	});
 	document.querySelectorAll('button[data-toggle]').forEach((button) => {
 		button.addEventListener('click', () => {
 			const box = document.getElementById(button.dataset.toggle);
-			setCollapsed(button.dataset.toggle, !box.classList.contains('collapsed'));
+			setCollapsed(box, !box.classList.contains('collapsed'));
 		});
 	});
-	document.querySelectorAll('.collapsed').forEach((el) => el.inert = true);
+	document.querySelectorAll('.collapsed').forEach((el) => setCollapsed(el, true));
 
 	async function drawIexChart() {
 		let data;
