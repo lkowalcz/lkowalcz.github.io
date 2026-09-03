@@ -23,11 +23,7 @@ a:hover {
 #name {
 	color: #000000;
 	padding-top: 5px;
-	font-size: 500%;
-}
-
-#bottom {
-	clear: both;
+	font-size: clamp(2rem, 10vw, 5rem);
 }
 
 .linklike {
@@ -54,7 +50,7 @@ a:hover {
 }
 
 .picbutton img {
-	width: 25%;
+	width: max(25%, 10rem);
 }
 
 .collapsible {
@@ -78,20 +74,18 @@ a:hover {
 }
 
 #menu {
-	margin: 0 auto;
-	display: table;
+	display: flex;
+	justify-content: center;
+	gap: 0 min(80px, 6vw);
 }
 
 .menuitem {
-	font-size: 20pt;
-	text-align: center;
-	padding-left: 40px;
-	padding-right: 40px;
-	float: left;
+	font-size: clamp(1rem, 4.5vw, 20pt);
 }
 
 #sections {
 	width: 61%;
+	min-width: min(36rem, 90%);
 	margin: 0 auto;
 }
 
@@ -190,19 +184,4 @@ a:hover {
 
 .paper {
 	padding: 10px;
-}
-
-@media (max-width: 600px) {
-	#name {
-		font-size: 250%;
-	}
-
-	.menuitem {
-		padding-left: 15px;
-		padding-right: 15px;
-	}
-
-	#sections {
-		width: 90%;
-	}
 }

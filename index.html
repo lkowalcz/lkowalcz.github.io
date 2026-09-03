@@ -148,7 +148,9 @@
 	let currentPic = 'pic';
 
 	function setCollapsed(id, collapsed) {
-		document.getElementById(id).classList.toggle('collapsed', collapsed);
+		const el = document.getElementById(id);
+		el.classList.toggle('collapsed', collapsed);
+		el.inert = collapsed; // keep hidden links out of the tab order and accessibility tree
 	}
 
 	function sectionClicked(id) {
@@ -176,6 +178,7 @@
 			setCollapsed(button.dataset.toggle, !box.classList.contains('collapsed'));
 		});
 	});
+	document.querySelectorAll('.collapsed').forEach((el) => el.inert = true);
 
 	async function drawIexChart() {
 		let data;
