@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Radar</title>
+<style>html, body { background: #000; }</style>
+<script>
+  // Clean alias: lukekowalczyk.com/radar -> the celestial-display project
+  // site's radar view, preserving any query params (rzoom, rglow, ...).
+  const q = new URLSearchParams(location.search);
+  q.set('view', 'radar');
+  location.replace('/celestial-display/?' + q.toString());
+</script>
+</head>
+<body></body>
+</html>

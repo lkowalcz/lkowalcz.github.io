@@ -1,0 +1,24 @@
+name: Update IEX notional data
+
+on:
+  schedule:
+    - cron: '17 11 3 * *' # monthly, on the 3rd, once the prior month's data is up
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/update-iex-notional.py
+      - name: Commit if changed
+        run: |
+          if ! git diff --quiet data/iex-notional.json; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add data/iex-notional.json
+            git commit -m "Update IEX notional data"
+            git push
+          fi

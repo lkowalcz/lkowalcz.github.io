@@ -1,0 +1,198 @@
+:root {
+	--ink: #2a2d30;
+	--muted: #767b80;
+	--rule: #e4e6e8;
+	--link: #941322;
+	--link-hover: #db1d33;
+}
+
+@font-face {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url('fonts/open-sans-400-latin.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: url('fonts/open-sans-700-latin.woff2') format('woff2');
+}
+
+body {
+	color: var(--ink);
+	font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+}
+
+a,
+.linklike {
+	color: var(--link);
+	text-decoration: none;
+}
+
+a:hover,
+.linklike:hover {
+	color: var(--link-hover);
+}
+
+.linklike {
+	background: none;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+}
+
+#top {
+	text-align: center;
+	padding: 50px 30px 5px;
+}
+
+#name {
+	color: #000;
+	margin: 0;
+	padding-top: 5px;
+	font-size: clamp(2rem, 10vw, 5rem);
+	font-weight: 400;
+}
+
+.picbutton {
+	display: block;
+	width: 100%;
+	background: none;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+}
+
+.picbutton img {
+	width: max(25%, 10rem);
+	height: auto;
+}
+
+.collapsible {
+	display: grid;
+	grid-template-rows: 1fr;
+	transition: grid-template-rows 0.4s ease;
+}
+
+.collapsible > .collapsible-inner {
+	overflow: hidden;
+	transition: padding 0.4s ease;
+}
+
+.collapsible.collapsed {
+	grid-template-rows: 0fr;
+}
+
+.collapsible.collapsed > .collapsible-inner {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+#menu {
+	display: flex;
+	justify-content: center;
+	gap: 0 min(80px, 6vw);
+	font-size: clamp(1rem, 4.5vw, 20pt);
+}
+
+#sections {
+	width: 61%;
+	min-width: min(36rem, 90%);
+	margin: 0 auto;
+}
+
+#sections > .collapsible:not(.collapsed) > .collapsible-inner {
+	padding: 10px;
+}
+
+.paper {
+	padding: 10px;
+}
+
+#cnt {
+	text-align: center;
+}
+
+#iexchartbox {
+	margin-top: -1em; /* margins don't collapse through the grid box; keep the paragraph gap at 1em when collapsed */
+}
+
+#iexchart {
+	margin: 1em 0 0;
+}
+
+#iexchart-wrap {
+	position: relative;
+}
+
+#iexchart-svg {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+#iexchart-svg .grid line {
+	stroke: var(--rule);
+	stroke-width: 1;
+}
+
+#iexchart-svg .lbl text {
+	font-size: 11px;
+	fill: var(--muted);
+}
+
+#iexchart-svg .area {
+	fill: var(--ink);
+	opacity: 0.08;
+}
+
+#iexchart-svg .line {
+	fill: none;
+	stroke: var(--ink);
+	stroke-width: 2;
+	stroke-linejoin: round;
+}
+
+#iexchart-svg .dot {
+	fill: var(--ink);
+}
+
+#iexchart-svg .endlbl {
+	font-size: 11px;
+	fill: var(--ink);
+}
+
+#iexchart-svg .hover line {
+	stroke: var(--link);
+	stroke-width: 1;
+}
+
+#iexchart-svg .hover circle {
+	fill: var(--link);
+	stroke: #fff;
+	stroke-width: 2;
+}
+
+#iexchart-tip {
+	position: absolute;
+	top: 0;
+	transform: translateX(-50%);
+	background: var(--ink);
+	color: #fff;
+	font-size: 12px;
+	padding: 3px 8px;
+	border-radius: 4px;
+	white-space: nowrap;
+	pointer-events: none;
+}
+
+#iexchart figcaption {
+	font-size: 12px;
+	color: var(--muted);
+	margin-top: 4px;
+}
