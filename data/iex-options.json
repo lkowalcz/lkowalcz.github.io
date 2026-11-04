@@ -1,0 +1,15 @@
+{
+ "source": "https://www.cboe.com/us/options/market_statistics/market/",
+ "series": "IEX options average daily volume by month, in contracts",
+ "start": "2026-10",
+ "values": [
+  119654
+ ],
+ "mtd": {
+  "month": "2026-11",
+  "through": "2026-11-03",
+  "trading_days": 2,
+  "value": 472240
+ },
+ "updated": "2026-11-04"
+}

@@ -1,0 +1,25 @@
+name: Update IEX exchange volume data
+
+on:
+  schedule:
+    - cron: '17 11 * * *' # daily, after the prior trading day's data is available
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest discover -s scripts -p 'test_*.py'
+      - run: python3 scripts/update-iex-notional.py
+      - name: Commit if changed
+        run: |
+          git add data/iex-notional.json data/iex-options.json
+          if ! git diff --cached --quiet; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git commit -m "Update IEX exchange volume data"
+            git push
+          fi
