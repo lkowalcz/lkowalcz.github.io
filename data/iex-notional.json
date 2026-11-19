@@ -2,7 +2,7 @@
  "source": "https://www.cboe.com/us/equities/market_share/",
  "series": "IEX average daily traded dollar value by month, in USD",
  "start": "2016-09",
- "updated": "2026-11-18",
+ "updated": "2026-11-19",
  "values": [
   4554293234,
   4838163998,
@@ -129,8 +129,8 @@
  ],
  "mtd": {
   "month": "2026-11",
-  "through": "2026-11-17",
-  "trading_days": 12,
-  "value": 49580677577
+  "through": "2026-11-18",
+  "trading_days": 13,
+  "value": 49062708134
  }
 }
